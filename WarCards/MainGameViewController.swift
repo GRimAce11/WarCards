@@ -22,7 +22,10 @@ class MainGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        resetScores()
+//        let mySceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate
+//        let delegate = UIApplication.shared.delega
+        SceneDelegate.viewController = self
         playerName.text = username?.uppercased() ?? "Player"
         // Do any additional setup after loading the view.
     }
@@ -142,6 +145,18 @@ class MainGameViewController: UIViewController {
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func resetScores() {
+        playerScore.text = "0"
+        cpuScore.text = "0"
+        playerScore.font = UIFont(name: "Helvetica-BoldOblique", size: 24)
+        cpuScore.font = UIFont(name: "Helvetica-BoldOblique", size: 24)
+        playerScore.textColor = .white
+        cpuScore.textColor = .white
+        playerCard.image = .back
+        cpuCard.image = .back
     }
     
     /*
