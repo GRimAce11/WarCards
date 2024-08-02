@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var Playername: UITextField!
     @IBOutlet weak var PlayWarCard: UIButton!
@@ -16,8 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         Playername.becomeFirstResponder()
-        Playername.delegate = self
-        // Do any additional setup after loading the view.
     }
     
     public class UserManager {
@@ -66,7 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             UserManager.shared.username = Playername.text
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "MainGameViewController") as! MainGameViewController
-            vc.username = UserManager.shared.username // Pass the username to the next VC
+            vc.username = UserManager.shared.username
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

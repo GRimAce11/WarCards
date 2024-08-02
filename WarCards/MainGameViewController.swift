@@ -25,7 +25,7 @@ class MainGameViewController: UIViewController {
 //        resetScores()
 //        let mySceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate
 //        let delegate = UIApplication.shared.delega
-        SceneDelegate.viewController = self
+//        gameviewController = self
         playerName.text = username?.uppercased() ?? "Player"
         // Do any additional setup after loading the view.
     }
