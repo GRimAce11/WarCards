@@ -12,10 +12,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var Playername: UITextField!
     @IBOutlet weak var PlayWarCard: UIButton!
     
-    
+    override func loadView() {
+        super.loadView()
+        print("View Lifecycle:",#function)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         Playername.becomeFirstResponder()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View Lifecycle:",#function)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("View Lifecycle:",#function)
+    }
+    override func viewIsAppearing(_ animated: Bool) {
+        <#code#>
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        <#code#>
     }
     
     public class UserManager {

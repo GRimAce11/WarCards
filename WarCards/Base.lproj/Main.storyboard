@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WarCards" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                             <constraint firstItem="Iz1-lq-ngR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="pPW-rj-Ghm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EQX-66-3gD"/>
+                    <navigationItem key="navigationItem" title="Home" id="EQX-66-3gD"/>
                     <connections>
                         <outlet property="PlayWarCard" destination="6Ge-Qt-vAS" id="Pxp-E6-eIs"/>
                         <outlet property="Playername" destination="dXj-FM-maM" id="RvY-7W-0IQ"/>
@@ -81,6 +81,45 @@
                                     <constraint firstAttribute="height" constant="67" id="iak-2V-SEh"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="164" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-eB-guO" userLabel="ScoreBoard">
+                                <rect key="frame" x="20" y="265.66666666666669" width="353" height="70.333333333333314"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WLy-fh-E7F" userLabel="PlayerScore">
+                                        <rect key="frame" x="0.0" y="3.3333333333333108" width="94.666666666666671" height="63.666666666666657"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="PLAYER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9As-7n-jMW">
+                                                <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="26"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                                <color key="textColor" systemColor="systemTealColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tz-rw-JMh" userLabel="PScore">
+                                                <rect key="frame" x="0.0" y="36" width="94.666666666666671" height="27.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aL6-Bu-iFU" userLabel="ComputerScore">
+                                        <rect key="frame" x="258.66666666666669" y="0.0" width="94.333333333333314" height="70.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="CPU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgu-fo-Is9">
+                                                <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="32.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
+                                                <color key="textColor" systemColor="systemTealColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvx-Gk-1jd" userLabel="CScore">
+                                                <rect key="frame" x="0.0" y="42.666666666666629" width="94.333333333333329" height="27.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="goF-sq-W25" userLabel="CardStack">
                                 <rect key="frame" x="26.666666666666657" y="326" width="340" height="200"/>
                                 <subviews>
@@ -96,16 +135,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="172" translatesAutoresizingMaskIntoConstraints="NO" id="u3Z-A3-Kln" userLabel="ResetandQuit">
-                                <rect key="frame" x="16" y="768" width="361" height="34.333333333333371"/>
+                                <rect key="frame" x="24.666666666666657" y="767.33333333333337" width="344" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCW-5B-SLr">
-                                        <rect key="frame" x="0.0" y="0.0" width="86" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34.329999999999998" id="IMT-LQ-WFJ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="IOw-QK-tKD"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="systemTealColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="leading" title="Reset" imagePadding="5">
+                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="leading" title="Reset" imagePadding="5" titleAlignment="center">
                                             <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="small"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -113,13 +152,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uul-Ox-sPC">
-                                        <rect key="frame" x="284.33333333333331" y="0.0" width="76.666666666666686" height="34.333333333333336"/>
+                                        <rect key="frame" x="267.33333333333331" y="0.0" width="76.666666666666686" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34.329999999999998" id="Yfo-cl-0Vh"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="VBY-Dg-GvN"/>
                                         </constraints>
                                         <color key="tintColor" name="AccentColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="leading" title="Quit" imagePadding="5">
+                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="leading" title="Quit" imagePadding="5" titleAlignment="center">
                                             <imageReference key="image" image="power" catalog="system" symbolScale="small"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -127,45 +166,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="164" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-eB-guO" userLabel="ScoreBoard">
-                                <rect key="frame" x="19.333333333333343" y="37" width="354.66666666666663" height="517.33333333333337"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WLy-fh-E7F" userLabel="PlayerScore">
-                                        <rect key="frame" x="0.0" y="223.00000000000003" width="95.333333333333329" height="71.333333333333343"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="PLAYER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9As-7n-jMW">
-                                                <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="33.666666666666664"/>
-                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="31"/>
-                                                <color key="textColor" systemColor="systemTealColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tz-rw-JMh" userLabel="PScore">
-                                                <rect key="frame" x="0.0" y="43.666666666666686" width="95.333333333333329" height="27.666666666666671"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="24"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aL6-Bu-iFU" userLabel="ComputerScore">
-                                        <rect key="frame" x="259.33333333333337" y="223.00000000000003" width="95.333333333333314" height="71.333333333333343"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="CPU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgu-fo-Is9">
-                                                <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="33.666666666666664"/>
-                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="31"/>
-                                                <color key="textColor" systemColor="systemTealColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvx-Gk-1jd" userLabel="CScore">
-                                                <rect key="frame" x="0.0" y="43.666666666666686" width="95.333333333333329" height="27.666666666666671"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="24"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="EBK-9U-nGe"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuF-NO-JUR">
                                 <rect key="frame" x="151.66666666666666" y="526" width="105.66666666666666" height="45"/>
@@ -179,19 +182,18 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MK4-WU-5Px"/>
                         <constraints>
-                            <constraint firstItem="Vwr-eB-guO" firstAttribute="centerX" secondItem="Fyu-Mc-FAE" secondAttribute="centerX" id="28J-Ry-iEI"/>
                             <constraint firstItem="goF-sq-W25" firstAttribute="centerY" secondItem="DAG-VK-P0H" secondAttribute="centerY" id="2Sp-aS-F9O"/>
-                            <constraint firstItem="u3Z-A3-Kln" firstAttribute="top" secondItem="Vwr-eB-guO" secondAttribute="bottom" constant="213.66666666666663" id="2cy-GP-yjZ"/>
                             <constraint firstItem="Fyu-Mc-FAE" firstAttribute="centerX" secondItem="DAG-VK-P0H" secondAttribute="centerX" id="ASS-pT-dks"/>
                             <constraint firstItem="Fyu-Mc-FAE" firstAttribute="top" secondItem="MK4-WU-5Px" secondAttribute="top" id="BoL-qe-6qR"/>
-                            <constraint firstItem="Vwr-eB-guO" firstAttribute="top" secondItem="DAG-VK-P0H" secondAttribute="top" constant="37" id="FX2-Kx-iW3"/>
                             <constraint firstItem="ZuF-NO-JUR" firstAttribute="centerY" secondItem="DAG-VK-P0H" secondAttribute="centerY" constant="122.33333333333337" id="NQy-q7-YOV"/>
                             <constraint firstItem="u3Z-A3-Kln" firstAttribute="centerX" secondItem="goF-sq-W25" secondAttribute="centerX" id="Vhb-2s-VTT"/>
-                            <constraint firstItem="u3Z-A3-Kln" firstAttribute="leading" secondItem="DAG-VK-P0H" secondAttribute="leadingMargin" id="W68-26-uO4"/>
                             <constraint firstItem="ZuF-NO-JUR" firstAttribute="centerX" secondItem="DAG-VK-P0H" secondAttribute="centerX" constant="7.8333333333333712" id="Xs0-ws-cA7"/>
                             <constraint firstItem="goF-sq-W25" firstAttribute="centerX" secondItem="DAG-VK-P0H" secondAttribute="centerX" id="ari-DT-c3b"/>
-                            <constraint firstItem="MK4-WU-5Px" firstAttribute="bottom" secondItem="u3Z-A3-Kln" secondAttribute="bottom" constant="15.666666666666629" id="bAz-Tv-Xa7"/>
+                            <constraint firstItem="MK4-WU-5Px" firstAttribute="bottom" secondItem="u3Z-A3-Kln" secondAttribute="bottom" constant="15.67" id="bAz-Tv-Xa7"/>
                             <constraint firstItem="Vwr-eB-guO" firstAttribute="centerX" secondItem="DAG-VK-P0H" secondAttribute="centerX" id="fBa-WK-GmD"/>
+                            <constraint firstItem="MK4-WU-5Px" firstAttribute="trailing" secondItem="Vwr-eB-guO" secondAttribute="trailing" constant="20" id="gYv-8j-ugE"/>
+                            <constraint firstItem="ZuF-NO-JUR" firstAttribute="top" secondItem="Vwr-eB-guO" secondAttribute="bottom" constant="190" id="ti6-98-LKp"/>
+                            <constraint firstItem="Vwr-eB-guO" firstAttribute="leading" secondItem="MK4-WU-5Px" secondAttribute="leading" constant="20" id="uTg-f6-pds"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="War Cards" id="O1D-YH-FBe"/>
@@ -236,7 +238,7 @@
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
